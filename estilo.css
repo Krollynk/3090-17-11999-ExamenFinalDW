@@ -1,0 +1,48 @@
+body{
+    background: antiquewhite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.4rem;
+}
+
+.contenedor{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: blueviolet;
+    border-radius: 25px;
+    box-shadow: 2px 2px 3px black;
+}
+
+h1{
+    color: antiquewhite;
+    text-shadow: 1px 1px 3px black;
+}
+
+#carnet{
+    margin: 15px;
+}
+
+.datos{
+    margin: 15px;
+}
+
+.boton{
+    margin-bottom: 15px;
+}
+
+table{
+    margin: auto;
+}
+
+.mensaje{
+    background-color: red;
+    color: black;
+}
+
+#consultas{
+    margin-top: 25px;
+    width: 75%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid black;
+}

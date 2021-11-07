@@ -37,3 +37,13 @@ function validar4(){
     var action = formu.getAttribute('action');
     console.log(action);
 }
+
+function paciente_val1(){
+    var formu = document.querySelector('form');
+    formu.setAttribute('action', '../controllers/paciente_enviar.php');
+}
+
+function paciente_val2(){
+    var formu = document.querySelector('form');
+    formu.setAttribute('action', '../controllers/paciente_actualizar.php');
+}

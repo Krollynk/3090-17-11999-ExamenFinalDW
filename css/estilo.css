@@ -71,3 +71,12 @@ table{
 #consultas thead th:nth-child(6){
     width: 13%;
 }
+
+#consult_paciente{
+    margin-top: 25px;
+    width: 90%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}

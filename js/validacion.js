@@ -47,3 +47,13 @@ function paciente_val2(){
     var formu = document.querySelector('form');
     formu.setAttribute('action', '../controllers/paciente_actualizar.php');
 }
+
+function medico_val1(){
+    var formu = document.querySelector('form');
+    formu.setAttribute('action', '../controllers/medico_enviar.php');
+}
+
+function medico_val2(){
+    var formu = document.querySelector('form');
+    formu.setAttribute('action', '../controllers/medico_actualizar.php');
+}

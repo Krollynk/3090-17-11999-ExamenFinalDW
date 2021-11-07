@@ -14,7 +14,7 @@ include ('../controllers/db_conection.php')
     </head>
     <body>
         <div class="contenedor">
-            <h1>Formulario</h1>
+            <h1>Formulario Medicos</h1>
             <?php if(isset($_SESSION['message'])) { ?>
             <div class="mensaje">
                 <p><?= $_SESSION['message'] ?></p>
@@ -23,65 +23,71 @@ include ('../controllers/db_conection.php')
             <form action="" name="formulario" method="POST">
                 <table>
                     <tr>
-                        <td>Usuario:</td>
-                        <td><input type="text" name="usuario" id="usuario" placeholder="Ingrese un nombre de usuario" required></td>
+                        <td>No. Colegiado:</td>
+                        <td><input type="text" name="colegiado" id="colegiado" placeholder="No. Colegiado" required></td>
                     </tr>
                     <tr>
-                        <td>contraseña:</td>
-                        <td><input type="password" name="pass" id="pass" placeholder="ingrese su contraseña" required></td>
+                        <td>Nombre Completo:</td>
+                        <td><input type="text" name="nombre" id="colegiado" placeholder="Nombre completo" required></td>
                     </tr>
                     <tr>
-                        <td>Nombre:</td>
-                        <td><input type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre" required></td>
+                        <td>Dirección:</td>
+                        <td><input type="text" name="direccion" id="direccion" placeholder="Dirección" required></td>
                     </tr>
                     <tr>
-                        <td>Correo</td>
-                        <td><input type="email" name="email" id="email" placeholder="Ingrese un correo electronico" required></td>
+                        <td>Fecha de Nacimiento:</td>
+                        <td><input type="text" name="fecha" id="fecha" placeholder="Nacimiento" required></td>
                     </tr>
                     <tr>
-                        <td>Tipo de usuario:</td>
-                        <td><select name="tipo_usuario" id="tipo_usuario" required>
-                            <option value="administrador">Administrador</option>
-                            <option value="usuario">Usuario</option>
-                            <option value="medico">Medico</option>
-                            <option value="enfermero">Enfermero</option>
-                            <option value="secretaria">Secreatria</option>
+                        <td>Correo Electronico:</td>
+                        <td><input type="email" name="correo" id="correo" placeholder="correo" required></td>
+                    </tr>
+                    <tr>
+                        <td>Especialidad:</td>
+                        <td><select name="especialidad" id="especialidad">
+                            <option value="medico general">Medico General</option>
+                            <option value="pediatra">Pediatra</option>
+                            <option value="internista">Internista</option>
+                            <option value="traumatologo">Traumatologo</option>
+                            <option value="otros">otros</option>
                         </select></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" name="enviar" class="boton" value="enviar" onclick="validar2()"></td>
-                        <td><input type="submit" name="actualizar" class="boton" value="actualizar" onclick="validar4()"></td>
+                        <td><input type="submit" name="enviar" class="boton" value="enviar" onclick="medico_val1()"></td>
+                        <td><input type="submit" name="actualizar" class="boton" value="actualizar" onclick="medico_val2()"></td>
                         <td><a href="../index.php"><input type="button" name="regresar" class="boton" value="regresar"></a></td>
                     </tr>
                 </table>
             </form>
         </div>
 
-        <table id="consultas">
+        <table id="medico_consulta">
             <thead>
                 <tr>
-                    <th>Usuario</th>
-                    <th>Contraseña</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Tipo Usuario</th>
+                    <th>No.Colegiado</th>
+                    <th>Nombre Completo</th>
+                    <th>Direccion</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Correo Electronico</th>
+                    <th>Especialidad</th>
                     <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $query = "SELECT * FROM usuarios";
+                $query = "SELECT * FROM medicos";
                 $result_consulta = mysqli_query($conn, $query);
 
                 while($row = mysqli_fetch_array($result_consulta, )){ ?>
                 <tr>
-                    <td><?php echo $row['usuario']?></td>
-                    <td><?php echo $row['pass']?></td>
-                    <td><?php echo $row['nombre']?></td>
-                    <td><?php echo $row['correo']?></td>
-                    <td><?php echo $row['tpuser']?></td>
+                    <td><?php echo $row['colegiado']?></td>
+                    <td><?php echo $row['nombres']?></td>
+                    <td><?php echo $row['direccion']?></td>
+                    <td><?php echo $row['nacimiento']?></td>
+                    <td><?php echo $row['email']?></td>
+                    <td><?php echo $row['especialidad']?></td>
                     <td>
-                        <a href="../controllers/borrar.php?user=<?php echo $row['usuario']?>"><i class="ri-delete-bin-fill"></i></a>
+                        <a href="../controllers/borrar.php?colegiado=<?php echo $row['colegiado']?>"><i class="ri-delete-bin-fill"></i></a>
                     </td>
                 </tr>
                 <?php } ?>

@@ -9,6 +9,7 @@ include ('db_conection.php')
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Registro de Usuarios</title>
   </head>
   <body>
@@ -44,7 +45,6 @@ include ('db_conection.php')
                   </tr>
                   <tr>
                       <td><input type="submit" name="enviar" class="boton" value="enviar" onclick="validar2()"></td>
-                      <td><input type="submit" name="borrar" class="boton" value="borrar" onclick="validar3()"></td>
                       <td><input type="submit" name="actualizar" class="boton" value="actualizar" onclick="validar4()"></td>
                   </tr>
               </table>
@@ -69,7 +69,14 @@ include ('db_conection.php')
 
                       while($row = mysqli_fetch_array($result_consulta, )){ ?>
                       <tr>
+                          <td><?php echo $row['usuario']?></td>
+                          <td><?php echo $row['pass']?></td>
                           <td><?php echo $row['nombre']?></td>
+                          <td><?php echo $row['correo']?></td>
+                          <td><?php echo $row['tpuser']?></td>
+                          <td>
+                              <a href="borrar.php?user=<?php echo $row['usuario']?>"><i class="ri-delete-bin-fill"></i></a>
+                          </td>
                       </tr>
                       <?php } ?>
                   </tbody>

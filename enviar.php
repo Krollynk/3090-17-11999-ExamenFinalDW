@@ -1,7 +1,5 @@
 <?php
-
 include('db_conection.php');
-
 if(isset($_POST['enviar'])){
     $usuario = $_POST['usuario'];
     $contra = $_POST['pass'];

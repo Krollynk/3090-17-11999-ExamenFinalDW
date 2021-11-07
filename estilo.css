@@ -41,8 +41,33 @@ table{
 
 #consultas{
     margin-top: 25px;
-    width: 75%;
+    width: 90%;
     table-layout: fixed;
     border-collapse: collapse;
     border: 1px solid black;
+    text-align: center;
+}
+
+#consultas thead th:nth-child(1){
+    width: 13%;
+}
+
+#consultas thead th:nth-child(2){
+    width: 13%;
+}
+
+#consultas thead th:nth-child(3){
+    width: 13%;
+}
+
+#consultas thead th:nth-child(4){
+    width: 25%;
+}
+
+#consultas thead th:nth-child(5){
+    width: 13%;
+}
+
+#consultas thead th:nth-child(6){
+    width: 13%;
 }

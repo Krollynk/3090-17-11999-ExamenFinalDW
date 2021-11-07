@@ -31,13 +31,6 @@ function validar2(){
     console.log(action);
 }
 
-function validar3(){
-    var formu = document.querySelector('form');
-    formu.setAttribute('action', './borrar.php')
-    var action = formu.getAttribute('action');
-    console.log(action);
-}
-
 function validar4(){
     var formu = document.querySelector('form');
     formu.setAttribute('action', './actualizar.php')

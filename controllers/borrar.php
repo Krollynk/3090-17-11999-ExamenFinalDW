@@ -9,6 +9,6 @@ if(assert($_GET['user'])){
         die("Query fallido");
     }
 
-    header('Location: reg_usuario.php');
+    header('Location: ../views/reg_usuario.php');
 };
 ?>

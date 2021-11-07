@@ -1,5 +1,5 @@
 <?php
-include ('db_conection.php')
+include ('../controllers/db_conection.php')
 ?>
 
 <!DOCTYPE html>
@@ -8,13 +8,18 @@ include ('db_conection.php')
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Registro de Usuarios</title>
   </head>
   <body>
       <div class="contenedor">
           <h1>Formulario</h1>
+          <?php if(isset($_SESSION['message'])) { ?>
+          <div class="mensaje">
+            <p><?= $_SESSION['message'] ?></p>
+          </div>
+        <?php session_unset(); }?>
           <form action="" name="formulario" method="POST">
               <table>
                   <tr>
@@ -46,6 +51,7 @@ include ('db_conection.php')
                   <tr>
                       <td><input type="submit" name="enviar" class="boton" value="enviar" onclick="validar2()"></td>
                       <td><input type="submit" name="actualizar" class="boton" value="actualizar" onclick="validar4()"></td>
+                      <td><a href="../index.php"><input type="button" name="regresar" class="boton" value="regresar"></a></td>
                   </tr>
               </table>
           </form>
@@ -75,12 +81,12 @@ include ('db_conection.php')
                           <td><?php echo $row['correo']?></td>
                           <td><?php echo $row['tpuser']?></td>
                           <td>
-                              <a href="borrar.php?user=<?php echo $row['usuario']?>"><i class="ri-delete-bin-fill"></i></a>
+                              <a href="../controllers/borrar.php?user=<?php echo $row['usuario']?>"><i class="ri-delete-bin-fill"></i></a>
                           </td>
                       </tr>
                       <?php } ?>
                   </tbody>
               </table>
   </body>
-  <script src="validacion.js"></script>
+  <script src="../js/validacion.js"></script>
 </html>
